@@ -1,0 +1,14 @@
+--- ocrad-0.4/doc/ocrad.info.orig	2003-09-03 15:55:58.000000000 +0200
++++ ocrad-0.4/doc/ocrad.info	2003-10-04 16:58:13.134075928 +0200
+@@ -1,9 +1,9 @@
+ This is ocrad.info, produced by makeinfo version 4.2 from
+ ../src/doc/ocrad.texinfo.
+ 
+-INFO-DIR-SECTION GNU packages
++INFO-DIR-SECTION Graphics Utilities:
+ START-INFO-DIR-ENTRY
+-* Ocrad: (ocrad).       The GNU OCR program.
++* Ocrad: (ocrad).			The GNU OCR program
+ END-INFO-DIR-ENTRY
+ 
+ 

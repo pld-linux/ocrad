@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications/Graphics
 Source0:	http://savannah.nongnu.org/download/ocrad/%{name}-%{version}.tar.bz2
 # Source0-md5:	dc477bff7ae0e0cda7490c1f90789338
+Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/ocrad/ocrad.html
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -25,8 +26,10 @@ podstawa innego programu.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
+# not autoconf-generated
 ./configure \
 	--prefix=/usr
 %{__make} \
@@ -43,6 +46,12 @@ install doc/ocrad.info $RPM_BUILD_ROOT%{_infodir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
+
+%postun
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
