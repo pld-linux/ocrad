@@ -1,12 +1,12 @@
 Summary:	Optical Character Recognition program
 Summary(pl):	Program optycznego rozpoznawania pisma (OCR)
 Name:		ocrad
-Version:	0.12
+Version:	0.13
 Release:	1
 License:	GPL
 Group:		Applications/Graphics
 Source0:	ftp://ftp.gnu.org/gnu/ocrad/%{name}-%{version}.tar.bz2
-# Source0-md5:	72ee02108c3fa33ee60525ca01976940
+# Source0-md5:	bf09dbb433c1ecf9e9a3b7c0f838ce73
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/ocrad/ocrad.html
 BuildRequires:	libstdc++-devel
@@ -27,7 +27,7 @@ podstawa innego programu.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
 
 %build
 # not autoconf-generated
