@@ -33,7 +33,7 @@ podstawa innego programu.
 # not autoconf-generated
 ./configure \
 	--prefix=%{_prefix}
-%{__make} \
+%{__make} all doc \
 	CXX="%{__cxx}" \
 	CXXFLAGS="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}"
