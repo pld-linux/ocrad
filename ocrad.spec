@@ -10,6 +10,7 @@ Source0:	ftp://ftp.gnu.org/gnu/ocrad/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-gcc4.patch
 URL:		http://www.gnu.org/software/ocrad/ocrad.html
+BuildRequires:	help2man
 BuildRequires:	libstdc++-devel
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
