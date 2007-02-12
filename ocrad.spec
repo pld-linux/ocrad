@@ -1,5 +1,5 @@
 Summary:	Optical Character Recognition program
-Summary(pl):	Program optycznego rozpoznawania pisma (OCR)
+Summary(pl.UTF-8):   Program optycznego rozpoznawania pisma (OCR)
 Name:		ocrad
 Version:	0.16
 Release:	1
@@ -20,10 +20,10 @@ image in pbm format and outputs text in ISO-8859-1 (Latin-1) charset.
 It can be used as a stand-alone terminal application, or as a backend
 to other programs.
 
-%description -l pl
-Ocrad jest programem OCR zaimplementowanym jako filtr. Czyta bitmapê w
-formacie pbm i zwraca tekst w zestawie znaków ISO-8859-1 (Latin-1).
-Mo¿e byæ u¿ywany jako samodzielna aplikacja terminalowa b±d¼ jako
+%description -l pl.UTF-8
+Ocrad jest programem OCR zaimplementowanym jako filtr. Czyta bitmapÄ™ w
+formacie pbm i zwraca tekst w zestawie znakÃ³w ISO-8859-1 (Latin-1).
+MoÅ¼e byÄ‡ uÅ¼ywany jako samodzielna aplikacja terminalowa bÄ…dÅº jako
 podstawa innego programu.
 
 %prep
