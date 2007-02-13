@@ -1,5 +1,5 @@
 Summary:	Optical Character Recognition program
-Summary(pl.UTF-8):   Program optycznego rozpoznawania pisma (OCR)
+Summary(pl.UTF-8):	Program optycznego rozpoznawania pisma (OCR)
 Name:		ocrad
 Version:	0.16
 Release:	1
