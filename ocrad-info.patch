@@ -1,14 +1,14 @@
---- ocrad-0.13/doc/ocrad.texinfo.orig	2005-10-10 19:24:28.000000000 +0200
-+++ ocrad-0.13/doc/ocrad.texinfo	2005-10-18 18:11:01.724221464 +0200
+--- ocrad-0.17/doc/ocrad.texinfo.orig	2007-06-28 20:38:54.000000000 +0200
++++ ocrad-0.17/doc/ocrad.texinfo	2007-07-11 21:20:58.154142913 +0200
 @@ -8,9 +8,9 @@
- @set VERSION 0.13
+ @set UPDATED 29 June 2007
+ @set VERSION 0.17
  
- @ifinfo
 -@dircategory GNU Packages
 +@dircategory Graphics Utilities:
  @direntry
--* Ocrad: (ocrad).              The GNU OCR program.
+-* Ocrad: (ocrad).               The GNU OCR program.
 +* Ocrad: (ocrad).			The GNU OCR program
  @end direntry
- @end ifinfo
+ 
  
