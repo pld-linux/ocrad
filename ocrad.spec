@@ -1,16 +1,18 @@
 Summary:	Optical Character Recognition program
 Summary(pl.UTF-8):	Program optycznego rozpoznawania pisma (OCR)
 Name:		ocrad
-Version:	0.17
+Version:	0.21
 Release:	1
 License:	GPL v3+
 Group:		Applications/Graphics
-Source0:	http://ftp.gnu.org/gnu/ocrad/%{name}-%{version}.tar.bz2
-# Source0-md5:	687c213b3334d5a6c2dcef97805c5882
+Source0:	http://ftp.gnu.org/gnu/ocrad/%{name}-%{version}.tar.lz
+# Source0-md5:	09b09a5f6d5a23551f744ba492e9382e
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/ocrad/ocrad.html
 BuildRequires:	help2man
 BuildRequires:	libstdc++-devel
+BuildRequires:	lzip
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,6 +28,18 @@ formacie pbm i zwraca tekst w zestawie znaków ISO-8859-1 (Latin-1).
 Może być używany jako samodzielna aplikacja terminalowa bądź jako
 podstawa innego programu.
 
+%package devel
+Summary:	Ocrad static library and header file
+Summary(pl.UTF-8):	Biblioteka statyczna i plik nagłówkowy Ocrada
+Group:		Development/Libraries
+# doesn't require base
+
+%description devel
+Ocrad static library and header file.
+
+%description devel -l pl.UTF-8
+Biblioteka statyczna i plik nagłówkowy Ocrada.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -33,32 +47,40 @@ podstawa innego programu.
 %build
 # not autoconf-generated
 ./configure \
-	--prefix=%{_prefix}
-%{__make} all doc \
 	CXX="%{__cxx}" \
 	CXXFLAGS="%{rpmcflags}" \
-	LDFLAGS="%{rpmldflags}"
+	LDFLAGS="%{rpmldflags}" \
+	--prefix=%{_prefix} \
+	--libdir=%{_libdir}
+%{__make} all doc
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_pixmapsdir},%{_infodir}}
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
-install ocrad $RPM_BUILD_ROOT%{_bindir}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 install ocrad.png $RPM_BUILD_ROOT%{_pixmapsdir}
-install doc/ocrad.info $RPM_BUILD_ROOT%{_infodir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_pixmapsdir}/*
-%{_infodir}/*.info*
+%attr(755,root,root) %{_bindir}/ocrad
+%{_pixmapsdir}/ocrad.png
+%{_mandir}/man1/ocrad.1*
+%{_infodir}/ocrad.info*
+
+%files devel
+%defattr(644,root,root,755)
+%{_libdir}/libocrad.a
+%{_includedir}/ocradlib.h
