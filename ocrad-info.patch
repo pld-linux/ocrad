@@ -1,5 +1,5 @@
---- ocrad-0.21/doc/ocrad.texinfo.orig	2011-01-10 01:52:19.000000000 +0100
-+++ ocrad-0.21/doc/ocrad.texinfo	2011-01-11 19:42:33.401904881 +0100
+--- ocrad-0.23/doc/ocrad.texi.orig	2011-01-10 01:52:19.000000000 +0100
++++ ocrad-0.23/doc/ocrad.texi	2011-01-11 19:42:33.401904881 +0100
 @@ -8,9 +8,9 @@
  @set UPDATED 10 January 2011
  @set VERSION 0.21
