@@ -1,8 +1,8 @@
---- ocrad-0.28/doc/ocrad.texi.orig	2022-01-19 18:26:20.620210892 +0100
-+++ ocrad-0.28/doc/ocrad.texi	2022-01-19 18:29:52.637850410 +0100
+--- ocrad-0.29/doc/ocrad.texi.orig	2024-02-23 05:41:49.619756209 +0100
++++ ocrad-0.29/doc/ocrad.texi	2024-02-23 05:43:41.017456376 +0100
 @@ -9,9 +9,9 @@
- @set UPDATED 17 January 2022
- @set VERSION 0.28
+ @set UPDATED 18 January 2024
+ @set VERSION 0.29
  
 -@dircategory GNU Packages
 +@dircategory Graphics Utilities:
