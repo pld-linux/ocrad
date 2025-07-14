@@ -43,7 +43,7 @@ Biblioteka statyczna i plik nagłówkowy Ocrada.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 # not autoconf-generated
